@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sara Kim</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="assets/signature.png" alt="Signature Image">
+    </div>
+  </header>
+
+  <nav>
+    <div class="home-nav">
+      <ul>
+        <li><a class="current-page">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="projectportfolio.html">Project Portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Star container outside the header -->
+  <div class="star-container">
+    <!-- Generate stars dynamically using JavaScript -->
+    <script>
+      // Create stars with random animation durations and delays
+      for (let i = 0; i < 500; i++) {
+        createStar(i); // Pass index to createStar function
+      }
+
+      // Function to create a star element with random position, animation duration, and delay
+      function createStar(index) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random duration between 2 and 6 seconds
+        
+        // Apply random pastel color to create softer appearance
+        const hue = Math.floor(Math.random() * 360); // Random hue value between 0 and 360 degrees (full spectrum)
+        const saturation = Math.floor(Math.random() * 20 + 30); // Random saturation between 50% and 70%
+        const lightness = Math.floor(Math.random() * 20 + 80); // Random lightness between 70% and 90%
+        star.style.backgroundColor = 'hsl(' + hue + ', ' + saturation + '%, ' + lightness + '%)'; // Set background color using HSL color format
+        
+        document.querySelector('.star-container').appendChild(star); // Append star to the container
+      }
+    </script>
+  </div>
+
+  <div class="container main-content">
+    <h2>Welcome!</h2>
+    <p>I'll cut to the chase. Here's how I can be an asset to your team: </p>
+    <ul>
+      <li>I pay attention to (and care about!) the little details.</li>
+      <li>I am a quick study, and am confident in my ability to learn on the job.</li>
+      <li>I am great at communication and asking for clarification.</li>
+      <li>I am creative by nature; my head is always full of ideas.</li>
+      <li><b>Scroll down for more details about my qualifications!</b></li>
+    </ul>
+    <br>
+    <p>If these traits sound like a good fit, I'd love to know more! You can contact me by filling out the box below, or via</p>
+    <ul>
+      <li>Email: sgkim918@gmail.com</li>
+      <li>Phone: (720) 485 2657</li>
+    </ul>
+    <p>I look forward to hearing from you!</p>
+    <br>
+    <form action="send_email.php" method="post" class="contact-form">
+      <label for="name">Your Name:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      <label for="email">Your Email:</label><br>
+      <input type="email" id="email" name="email" required><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="8" required></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    <h3>More About Me</h3>
+    <embed class="pdf-container" src="assets/Resume.pdf" type="application/pdf">
+      <div class="text-content">
+        <p>I recently graduated in Decmeber 2023 from the Colorado School of Mines and am looking for my very first industry job! Mines is a school that emphasizes hands-on learning, so I am experienced in putting theory to practice (check out my Project Portfolio <a href="projectportfolio.html">here</a>). I have a particular interest in frontend software development, as my favorite projects were ones where I got to be creative with interface design and user experience. In the past I have really enjoyed working directly with clients and collaborating to generate ideas based on specific needs and criteria. What I am most looking forward to about entering the industry is working on projects that have real-world impacts; software that can help meet people's needs and improve lives (even in small ways!) is what I find most motivating and rewarding. When I am fully engaged in a project like that, I give it my all and find I can always take pride in the end result. I am confident that my skills will add significant value to any team, and I am eager to learn from that team in exchange. I believe everyone has an important and unique perspective to offer, so thank you for considering me!</p>
+      </div>
+    </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Sara Kim. &#9733;</p>
+    </div>
+  </footer>
+
+</body>
+</html>
