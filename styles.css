@@ -1,0 +1,459 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url('assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+  /* Add additional font formats (e.g., .ttf, .otf) if needed */
+}
+
+a:link {
+  color: white; /* Color for unvisited links */
+}
+
+a:visited {
+  color: lightgray; /* Color for visited links */
+}
+
+.star-container {
+  position: fixed; /* Ensure stars are positioned relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Set container width to match viewport width */
+  height: 100%; /* Set container height to match viewport height */
+  z-index: -1; /* Set a lower z-index to ensure stars are behind other content */
+}
+
+.star {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 2.5px solid transparent;
+  border-right: 2.5px solid transparent;
+  border-bottom: 5px solid white; /* Adjust the size of the star as needed */
+  animation: twinkling 5s infinite;
+  transform-origin: center; /* Set the rotation origin to the center */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+@keyframes twinkling {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Reset styles */
+html, body, h1, h2, h3, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set up a basic layout */
+body {
+  font-family: "Quicksand", Arial, sans-serif;
+  line-height: 1.8;
+  background-color: rgb(17, 11, 28);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  cursor: url('assets/starmouse_regular.png') 50 50, auto;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Header styles */
+header {
+  background: transparent; /* Set header background to transparent */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed; /* Set header position to relative */
+}
+
+/* Style header logo */
+header img {
+  position: absolute;
+  top: 25px; /* Add margin to the top */
+  left: 25px; /* Add margin to the left */
+  height: 50px; /* Set the height of the logo */
+}
+
+header h1 {
+  font-size: 2em;
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+/* Navigation styles */
+nav {
+  background: transparent; /* Set navigation background to transparent */
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 25px 5px 0; /* Add margin at the top to create space */
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+nav ul li {
+  display: inline-block; /* Set list items to inline-block to make them appear side-by-side */
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white !important;
+  text-decoration: none;
+  font-family: "Quicksand", Arial, sans-serif;
+  display: inline-block; /* Set the anchor elements to inline-block */
+  /*border: 1px solid white; /* Add border to the navigation links */
+  padding: 8px 12px; /* Add padding to create space between text and border */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  background-color: rgba(159, 159, 159, 0.2);
+}
+
+nav ul li a:hover {
+  cursor: url('assets/starmouse_click.png') 50 50, pointer;
+  background-color: #fff; /* Change background color on hover */
+  color: rgb(0, 14, 21) !important; /* Change text color on hover */
+  border-color: rgba(255, 255, 255); /* New border color */
+}
+
+nav ul li a.current-page {
+  color: #ffffff; /* Change text color for current page */
+  border-color: rgba(255, 255, 255); /* Change border color for current page */
+  background-position: center; /* Center the background image */
+  background-size: cover; /* Ensure the background image covers the entire element */
+}
+
+/* Home page navigation */
+.home-nav ul li a.current-page {
+  background-color: rgba(255, 125, 125, 0.5); /* Red background color for current page */
+}
+
+/* About me page navigation */
+.about-nav ul li a.current-page {
+  background-color: rgba(255, 202, 123, 0.5); /* Green background color for current page */
+}
+
+/* Project portfolio page navigation */
+.portfolio-nav ul li a.current-page {
+  background-color: rgba(235, 255, 120, 0.5); /* Blue background color for current page */
+}
+
+/* Main content styles */
+.main-content {
+  background: linear-gradient(to bottom, rgba(255, 125, 125, 0.5), rgba(255, 202, 123, 0.5), rgba(235, 255, 120, 0.5), rgba(121, 255, 116, 0.5), rgba(127, 138, 255, 0.5), rgba(190, 121, 255, 0.5), rgba(255, 127, 217, 0.5));
+  padding: 25px;
+  margin: 0 auto; /* Center the container horizontally */
+  margin-top: 80px;
+  width: calc(100vw - 100px);
+  border-radius: 10px;
+  overflow-y: auto;
+  height: calc(100vh - 170px);
+  /*border: 1px solid white; */
+}
+
+/* About me page */
+.about-page {
+  background: linear-gradient(to bottom, rgba(255, 202, 123, 0.5), rgba(235, 255, 120, 0.5), rgba(121, 255, 116, 0.5), rgba(127, 138, 255, 0.5), rgba(190, 121, 255, 0.5), rgba(255, 127, 217, 0.5), rgba(255, 125, 125, 0.5));
+}
+
+/* Project portfolio page */
+.portfolio-page {
+  background: linear-gradient(to bottom, rgba(235, 255, 120, 0.5), rgba(121, 255, 116, 0.5), rgba(127, 138, 255, 0.5), rgba(190, 121, 255, 0.5), rgba(255, 127, 217, 0.5), rgba(255, 125, 125, 0.5), rgba(255, 202, 123, 0.5));
+}
+
+/* Text box header font */
+.main-content h2 {
+  font-family: "Quicksand", Arial, sans-serif; /* Use the desired font family */
+  font-weight: 500; /* Make the font bold */
+  font-size: 22pt;
+}
+
+/* Text box section header font */
+.main-content h3 {
+  font-family: "Quicksand", Arial, sans-serif; /* Use the desired font family */
+  font-weight: 300; /* Make the font bold */
+  font-size: 20pt;
+}
+
+.main-content ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 20px;
+}
+
+.main-content ul li::before {
+  content: "\2605"; /* Unicode character for star */
+  color: white; /* Change color to gold or any color you prefer */
+  margin-right: 15px; /* Add space between the star and the list item text */
+  font-size: 9px;
+  vertical-align: middle;
+}
+
+.section-break {
+  display: block; /* Ensure the image is displayed as a block element */
+  max-width: 100%; /* Limit the maximum width of the image to its container */
+  height: auto; /* Automatically adjust the height to maintain aspect ratio */
+  margin: 0 auto; /* Center the image horizontally within its container */
+}
+
+/* Footer styles */
+footer {
+  background: transparent; /* Set footer background to transparent */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+
+.contact-form {
+  border: 2px solid white; /* Add a 2px solid white border */
+  border-radius: 10px; /* Add a 10px border radius for rounded corners */
+  padding: calc(1.5vw); /* Add some padding to create space between content and border */
+}
+
+.contact-form label {
+  color: white; /* Set label text color to white */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 97.8%; /* Make text input and textarea fill the entire width */
+  padding: 10px; /* Add padding to text input and textarea */
+  margin-bottom: 10px; /* Add margin between input fields */
+  border: none; /* Remove default input border */
+  background-color: rgba(255, 255, 255, 0.4); /* Make input background transparent */
+  color: white; /* Set text color to white */
+  border-radius: 10px;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 300; /* Make the font bold */
+  font-size: 12pt;
+}
+
+.contact-form input[type="submit"] {
+  width: auto; /* Set width of submit button to auto */
+  padding: 10px 20px; /* Add padding to submit button */
+  border: none; /* Remove default button border */
+  background-color: rgba(255, 255, 255, 0.4); /* Set button background color to white */
+  color: white; /* Set button text color */
+  cursor: url('assets/starmouse_click.png') 50 50, pointer;
+  border-radius: 10px; /* Add border radius for rounded button */
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 300; /* Make the font bold */
+  font-size: 12pt;
+}
+
+.container.main-content.about-page img {
+  width: 280px; /* Adjust the width to your preference */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Add rounded corners */
+  float: right; /* Float the image to the left */
+  margin-right: 5px;
+  margin-top: 6px;
+  margin-left: 20px;
+}
+
+/* Slideshow styles */
+.photo-gallery-container {
+  border: 2px solid white; /* Add a solid white border */
+  border-radius: 15px; /* Add border radius for rounded corners */
+  padding: 0px; /* Add padding to create space between the border and content */
+}
+
+.slideshow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.slideshow img {
+  max-width: 150%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.description {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.thumbnail {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.thumbnail img {
+  width: 80px !important;
+  height: 80px !important;
+  margin-right: 10px;
+  cursor: url('assets/starmouse_click.png') 50 50, pointer;
+  border-radius: 5px;
+  border: 2px solid transparent;
+}
+
+.thumbnail img:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.thumbnail img.selected {
+  border-color: white;
+}
+
+.pdf-container {
+  border: 2px solid white; /* Add a white border */
+  border-radius: 10px; /* Add rounded corners */
+  overflow: hidden; /* Hide any content that overflows the container */
+  float: right; /* Float the PDF to the left */
+  margin-left: 20px; /* Add some space between the PDF and the text */
+  margin-top: 8px;
+  width: 500px; /* Adjust the width as needed */
+  height: 500px; /* Maintain aspect ratio */
+}
+
+/* Style the PDF embed */
+.pdf-container embed {
+  width: 100%; /* Make the embed fill the container width */
+  height: 600px; /* Set the height of the embed */
+}
+
+
+#SIF {
+  overflow: hidden; /* Clear floats */
+}
+
+.project-image-left {
+  float: left; /* Float the image to the left */
+  margin-right: 20px; /* Add some space between the image and the text */
+  margin-top: 12px;
+  width: calc(30vw); /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.project-image-right {
+  float: right; /* Float the image to the left */
+  margin-left: 20px; /* Add some space between the image and the text */
+  margin-top: 12px;
+  width: calc(30vw); /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.project-video-left {
+  float: left; /* Float the image to the left */
+  margin-right: 20px; /* Add some space between the image and the text */
+  margin-top: 12px;
+  width: calc(30vw); /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.project-video-right {
+  float: right; /* Float the image to the left */
+  margin-left: 20px; /* Add some space between the image and the text */
+  margin-top: 12px;
+  width: calc(30vw); /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.project-pdf-left {
+  float: left; /* Float the PDF to the left */
+  margin-right: 20px; /* Add some space between the PDF and the text */
+  margin-top: 12px;
+  width: calc(30vw); /* Adjust the width as needed */
+  height: calc(30vw); /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.project-pdf-right {
+  float: right; /* Float the PDF to the left */
+  margin-left: 20px; /* Add some space between the PDF and the text */
+  margin-top: 12px;
+  width: calc(30vw); /* Adjust the width as needed */
+  height: calc(30vw); /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.project-intro-left {
+  float: left; /* Float the image to the left */
+  margin-right: 50px; /* Add some space between the image and the text */
+  margin-top: 10px;
+  width: calc(50vw); /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.text-content {
+  overflow: hidden; /* Clear floats */
+}
+
+#minesweeper-container {
+  margin: 20px auto;
+  display: inline-block;
+}
+
+#minesweeper {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-gap: 5px;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffffaa;
+  border: 1px solid #ffffff;
+  text-align: center;
+  line-height: 30px;
+  cursor: url('assets/starmouse_click.png') 50 50, pointer;
+  border-radius: 5px;
+}
+
+.cell.revealed {
+  background-color: #00ff3caa;
+  border: 1px solid #00ff3c;
+}
+
+.cell.mine {
+  background-color: #ff000000;
+  border: 1px solid #ff000000;
+}
+
+button {
+  border-radius: 10px;
+  border: none;
+  appearance: none;
+  background-color: transparent;
+  transition: transform .7s ease-in-out;
+  margin-left:10px;
+  height: 70px;
+  width: 70px;
+}
+
+button:hover {
+  transform: rotate(360deg);
+  cursor: url('assets/starmouse_click.png') 50 50, pointer;
+}

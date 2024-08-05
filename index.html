@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sara Kim</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+  <link rel="icon" href="assets/starlogo.png" type="image/png">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="assets/signature.png" alt="Signature Image">
+    </div>
+  </header>
+
+  <nav>
+    <div class="home-nav">
+      <ul>
+        <li><a class="current-page">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="projectportfolio.html">Project Portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Star container outside the header -->
+  <div class="star-container">
+    <!-- Generate stars dynamically using JavaScript -->
+    <script>
+      // Create stars with random animation durations and delays
+      for (let i = 0; i < 500; i++) {
+        createStar(i); // Pass index to createStar function
+      }
+
+      // Function to create a star element with random position, animation duration, and delay
+      function createStar(index) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random duration between 2 and 6 seconds
+        
+        // Apply random pastel color to create softer appearance
+        const hue = Math.floor(Math.random() * 360); // Random hue value between 0 and 360 degrees (full spectrum)
+        const saturation = Math.floor(Math.random() * 20 + 30); // Random saturation between 50% and 70%
+        const lightness = Math.floor(Math.random() * 20 + 80); // Random lightness between 70% and 90%
+        star.style.backgroundColor = 'hsl(' + hue + ', ' + saturation + '%, ' + lightness + '%)'; // Set background color using HSL color format
+        
+        document.querySelector('.star-container').appendChild(star); // Append star to the container
+      }
+    </script>
+  </div>
+  <div class="container main-content">
+    <h2>Hello!</h2>
+    <p>Thanks for popping in! I'm Sara. : )</p>
+    <video class="project-intro-left" src="assets/Website Intro.MOV" controls></video>
+    <h3>Contact Me!</h3>
+    <a href="https://www.linkedin.com/in/sara-kim-734195232/">
+      <button type="submit">
+        <img src="assets/sunmoonstars.png" alt="buttonpng" border="0" />
+      </button>
+    </a>    
+    <ul>
+      <li>Email: sgkim918@gmail.com</li>
+      <li>Phone: (720) 485 2657</li>
+      <li>LinkedIn: https://www.linkedin.com/in/sara-kim-734195232/</li>
+      <li>GitHub: https://github.com/sarakim918</li>
+    </ul>
+    <p>I look forward to hearing from you!</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <!--
+    <form action="send_email.php" method="post" class="contact-form">
+      <label for="name">Your Name:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      <label for="email">Your Email:</label><br>
+      <input type="email" id="email" name="email" required><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="8" required></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    //-->
+    
+    <embed class="project-pdf-right" src="assets/Resume.pdf" type="application/pdf">
+    <h3>More About Me</h3>
+    <p>Here's how I can be an asset to your team: </p>
+    <ul>
+      <li>I pay attention to (and care about!) the little details.</li>
+      <li>I am a quick study, and am confident in my ability to learn on the job.</li>
+      <li>I am great at communication and asking for clarification.</li>
+      <li>I am creative by nature; my head is always full of ideas.</li>
+    </ul>
+  </div>
+
+</body>
+</html>

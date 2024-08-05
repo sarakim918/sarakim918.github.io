@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sara Kim</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+  <link rel="icon" href="assets/starlogo.png" type="image/png">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="assets/signature.png" alt="Signature Image">
+    </div>
+  </header>
+
+  <nav>
+    <div class="about-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="current-page">About Me</a></li>
+        <li><a href="projectportfolio.html">Project Portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Star container outside the header -->
+  <div class="star-container">
+    <!-- Generate stars dynamically using JavaScript -->
+    <script>
+      // Create stars with random animation durations and delays
+      for (let i = 0; i < 500; i++) {
+        createStar(i); // Pass index to createStar function
+      }
+
+      // Function to create a star element with random position, animation duration, and delay
+      function createStar(index) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random duration between 2 and 6 seconds
+        
+        // Apply random pastel color to create softer appearance
+        const hue = Math.floor(Math.random() * 360); // Random hue value between 0 and 360 degrees (full spectrum)
+        const saturation = Math.floor(Math.random() * 20 + 30); // Random saturation between 50% and 70%
+        const lightness = Math.floor(Math.random() * 20 + 80); // Random lightness between 70% and 90%
+        star.style.backgroundColor = 'hsl(' + hue + ', ' + saturation + '%, ' + lightness + '%)'; // Set background color using HSL color format
+        
+        document.querySelector('.star-container').appendChild(star); // Append star to the container
+      }
+    </script>
+  </div>
+
+  <div class="container main-content about-page">
+    <h2>On a more personal level...</h2>
+    <img src="assets/aboutme/Me.png" alt="Me">
+    <p>I'm a real human being, I promise! (Not just a walking, talking CV). I'm from Denver, Colorado and have been living here for over 15 years. As a new grad, I'm very excited to get out into the world, get my hands dirty, and try new things! My current favorite hobbies are singing, learning to play instruments, and writing music. I'm an ameteur bassist, guitarist (electric preferred!), and violist, with plans to learn drums soon. I also enjoy writing, art, dance, and fashion-- any form of creative expression, really! I'm admittedly not very good at most of them, but I love them anyway. :)  When I'm looking to relax, I can be found hiking, walking my dog Luna, playing with tarot cards, meditating, hanging out with friends and family, reading, journaling, and/or fueling my boba addiction. Colorado is pretty incredible, but Luna and I are looking forward to moving somewhere cool and exploring (sniffing)!</p>
+    <br>
+    <h3>Some Favorites of Mine</h3>
+    <ul>
+      <li><b>Favorite quote:</b> "Be so good they can't ignore you"  -Steve Martin  (I really appreciate this quote because, in the words of a close friend of mine, "It feels like lighting a fire under your [butt]".)</li>
+      <li><b>Favorite music genre:</b> Alternative rock  (Classic with a twist-- can't go wrong.)</li>
+      <li><b>Favorite TV show (currently):</b> Dickinson  (It's a little funky, but very fun!)</li>
+      <li><b>Favorite/lucky number:</b> 9  (Such a good number.)</li>
+      <li><b>Favorite coding language:</b> Swift  (Controversial, I know! I'm very biased. A close second is Python, although I'm not sure if that makes it better or worse.)</li>
+    </ul>
+    <br>
+    <h3>Photo Gallery</h3>
+    <div class="photo-gallery-container">
+      <div class="container">
+        <div class="description">
+          <p id="description">My family! From left to right: my mom, my brother Kai, my brother Alex, me, and my dad.</p>
+        </div>
+        <div class="slideshow">
+          <img id="mainImage" src="assets/aboutme/Family.png" alt="Family">
+        </div>
+        <div class="thumbnail">
+          <img src="assets/aboutme/Family.png" alt="Family" onclick="showImage('assets/aboutme/Family.png', 'My family! From left to right: my mom, my brother Kai, my brother Alex, me, and my dad.')">
+          <img src="assets/aboutme/LunaSnow.png" alt="Luna Snow" onclick="showImage('assets/aboutme/LunaSnow.png', 'My dog, Luna. She was very excited to be hiking in the snow. :)')">
+          <img src="assets/aboutme/GoldenHike.png" alt="Golden Hike" onclick="showImage('assets/aboutme/GoldenHike.png', 'This is the view from my favorite spot in Golden, CO. It is a bit of a trek, but well worth it!')">
+          <img src="assets/aboutme/Brothers.png" alt="Brothers" onclick="showImage('assets/aboutme/Brothers.png', 'Me and my brothers at Thanksgiving! Alex (left) is 12, and Kai (right) is 18.')">
+          <img src="assets/aboutme/LunaStudying.png" alt="Luna Studying" onclick="showImage('assets/aboutme/LunaStudying.png', 'Luna studying Theory of Computation. (She is very focused.)')">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the selected image and description
+    function showImage(imageSrc, description) {
+      document.getElementById('mainImage').src = imageSrc;
+      document.getElementById('description').innerText = description;
+    }
+  
+    // Get all thumbnail images
+    const thumbnails = document.querySelectorAll('.thumbnail img');
+  
+    // Add click event listener to each thumbnail image
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+        // Remove the "selected" class from all thumbnail images
+        thumbnails.forEach(t => t.classList.remove('selected'));
+  
+        // Add the "selected" class to the clicked thumbnail image
+        thumbnail.classList.add('selected');
+      });
+    });
+  
+    // Add "selected" class to the first thumbnail image when the page loads
+    thumbnails[0].classList.add('selected');
+  </script>
+
+</body>
+</html>

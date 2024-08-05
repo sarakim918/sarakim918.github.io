@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sara Kim</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+  <link rel="icon" href="assets/starlogo.png" type="image/png">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="assets/signature.png" alt="Signature Image">
+    </div>
+  </header>
+
+  <nav>
+    <div class="portfolio-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a class="current-page">Project Portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Star container outside the header -->
+  <div class="star-container">
+    <!-- Generate stars dynamically using JavaScript -->
+    <script>
+      // Create stars with random animation durations and delays
+      for (let i = 0; i < 500; i++) {
+        createStar(i); // Pass index to createStar function
+      }
+
+      // Function to create a star element with random position, animation duration, and delay
+      function createStar(index) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random duration between 2 and 6 seconds
+        
+        // Apply random pastel color to create softer appearance
+        const hue = Math.floor(Math.random() * 360); // Random hue value between 0 and 360 degrees (full spectrum)
+        const saturation = Math.floor(Math.random() * 20 + 30); // Random saturation between 50% and 70%
+        const lightness = Math.floor(Math.random() * 20 + 80); // Random lightness between 70% and 90%
+        star.style.backgroundColor = 'hsl(' + hue + ', ' + saturation + '%, ' + lightness + '%)'; // Set background color using HSL color format
+        
+        document.querySelector('.star-container').appendChild(star); // Append star to the container
+      }
+    </script>
+  </div>
+
+  <div class="container main-content portfolio-page">
+    <h2>Previous Projects</h2>
+    <p>I've worked on lots of fun projects over the past few years! Some of my favorites include: </p>
+    <ul>
+      <li>This website! (View the source code on Github <a href="https://github.com/sarakim918/sarakim918.github.io">here</a>).</li>
+      <li><a href="#SKPlanner">MacOS planner/calendar app</a></li>
+      <li><a href="#Soletta">Space-themed desktop adventure game</a></li>
+      <li><a href="#SIF">Mobile app for Spanish students</a></li>
+      <li><a href="#Clue">Java version of the classic board game Clue</a></li>
+      <li><a href="#HCI">Human-centered design project on social health for international students</a></li>
+      <li><a href="#IOT">Research project on privacy concerns in Siri voice functionality</a></li>
+    </ul>
+    <p>Further details on each of these projects can be found below.</p>
+    <div id="SKPlanner">
+      <img class="section-break" src="assets/pagebreak.png" alt="Section Break Image">
+      <video class="project-video-left" src="assets/projects/SKPlanner.mp4" controls></video>
+      <div class="text-content">
+        <h3>SK Planner</h3>
+        <p><em>SK Planner</em> was a solo project I developed for MacOS in Xcode during a graduate seminar class. As my final project, I created a comprehensive planner app that prioritizes data consistency across various panels, user intuitiveness, and customizability to suit diverse needs. Throughout this project, I gained invaluable experience in Swift, UI design, macOS development, Xcode, and data flow management. This project was a significant milestone in my development journey and stands out as my favorite project to date. A demo video showcasing basic app functionality is available to the left, and the source code can be found on GitHub <a href="https://github.com/sarakim918/SKPlanner">here.</a></p>
+      </div>
+    </div>
+    <div id="Soletta">
+      <img class="section-break" src="assets/pagebreak.png" alt="Section Break Image">
+      <video class="project-video-right" src="assets/projects/Soletta.mp4" controls></video>
+      <div class="text-content">
+        <h3>Soletta</h3>
+        <p><em>Soletta</em> was another graduate seminar project. I partnered with a classmate over the course of the semester to create an original desktop video game using GameMaker Studio. Soletta is a fun and lighthearted space-themed adventure game that offered a diverse range of gameplay modes, including enemy combat, puzzle-solving, and spaceship navigation. Working on this project significantly deepened my understanding of object-oriented programming, game mechanics, graphics, player engagement, and user testing. A demo video showcasing the game can be found to the right, but unfortunately I am unable to share the code as it would not be appropriate to distribute it without my partner's consent.</p>
+      </div>
+    </div>
+    <div id="SIF">
+      <img class="section-break" src="assets/pagebreak.png" alt="Section Break Image">
+      <img class="project-image-left" src="assets/projects/SIFLogo.png" alt="Image Description">
+      <div class="text-content">
+        <h3>Spanish Is Fun</h3>
+        <p><em>Spanish is Fun</em> was a 6-week summer project focused on creating a mobile application for a local Spanish school. Developed for both iOS and Android platforms using Flutter, Xcode, and Android Studio, our team of three undergraduate students aimed to enhance the language learning experience through engaging exercises and interactive features. The app offered a variety of functionality, including flashcards, multiple-choice quizzes, and audio-visual aids for pronunciation practice. Our team also prioritized aesthetics and user experience, investing significant effort into design elements such as splash screens, logos, and visual content. The emphasis on quality permeated every aspect of the project, resulting in a polished and user-friendly application. The project's code remains under contract, so unfortunately there is no access.</p>
+      </div>
+    </div>
+    <div id="Clue">
+      <img class="section-break" src="assets/pagebreak.png" alt="Section Break Image">
+      <video class="project-video-right" src="assets/projects/Clue.mp4" controls></video>
+      <div class="text-content">
+        <h3>Clue</h3>
+        <p><em>Clue</em> was an undergraduate project developed over using Java and the Agile development process. I collaborated with a partner to create a desktop version of the classic board game, Clue. This project marked my first significant software programming endeavor, providing invaluable lessons in data structures, data management, code organization, pair programming, graphics, and user interfaces. Designed as a single-player game, we faced the additional challenge of integrating computer-generated player moves through complex algorithms, adding depth and realism to the gameplay. This project was both challenging and rewarding, and significantly enhanced my programming and development skills. A demo video showcasing the gameplay can be found to the right. I am again unable to share the code as it would not be appropriate to distribute it without my partner's consent.</p>
+      </div>
+    </div>
+    <div id="HCI">
+      <img class="section-break" src="assets/pagebreak.png" alt="Section Break Image">
+      <embed class="project-pdf-left" src="assets/projects/HCDPaper.pdf" type="application/pdf">
+      <div class="text-content">
+        <h3>Promoting Social Health for International Students</h3>
+        <p><em>Promoting Social Health for International Students: A Human-Centered Design
+          Approach to Support In-Situ Social Training, Reflection, and Connection</em> was an on-campus research project I conducted with three other graduate students that focused on the unique challenges faced by international students. Leveraging social and collaborative computing values and human-centered design techniques, we aimed to understand and address the unique social health needs of this group. Our methodology included questionnaires, interviews, and user testing sessions, which allowed us to uncover problems, specify design implications, generate potential solutions, and develop a prototype application guided by our interviewees. The project details and findings are thoroughly documented in the paper to the left.</p>
+      </div>
+    </div>
+    <div id="IOT">
+      <img class="section-break" src="assets/pagebreak.png" alt="Section Break Image">
+      <embed class="project-pdf-right" src="assets/projects/IOTPaper.pdf" type="application/pdf">
+      <div class="text-content">
+        <h3>Hey Siri, Who's Listening?</h3>
+        <p><em>Hey Siri, Who's Listening?</em> was a solo research project I completed for a graduate seminar on Privacy and Security in Internet of Things (IoT) devices. This project focused on the Siri voice activation function found in most Apple devices. Through comprehensive at-home testing, I aimed to identify the frequency of accidental activations and examine the privacy implications of such behavior. The research revealed suspicious inconsistencies in Siri's behavior, particularly when comparing device responses in active mode versus sleep mode. These findings highlight potential privacy concerns related to unintended activations and data collection practices. The full project details, including methodology and results, are documented in the paper to the right.</p>
+      </div>
+    </div>
+    <img class="section-break" src="assets/pagebreak.png" alt="Section Break Image">
+    <h3>I have completed additional hands-on coursework in...</h3>
+    <p>Computer Science:</p>
+    <ul>
+      <li>Data Science</li>
+      <li>Machine Learning</li>
+      <li>Bioinformatics</li>
+      <li>SQL/Databases</li>
+      <li>Algorithms</li>
+      <li>Statistics</li>
+      <li>Theory of Computation</li>
+      <li>Computer Arcitecture</li>
+      <li>Operating Systems</li>
+      <li>Information Security and Privacy</li>
+    </ul>
+    <p>Biology (minor):</p>
+    <ul>
+      <li>Bioinformatics</li>
+      <li>Genetics</li>
+      <li>Immunology</li>
+      <li>Cell Biology and Physiology</li>
+    </ul>
+  </div>
+
+</body>
+</html>
