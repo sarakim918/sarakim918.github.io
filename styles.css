@@ -448,9 +448,8 @@ button {
   appearance: none;
   background-color: transparent;
   transition: transform .7s ease-in-out;
-  margin-left:10px;
-  height: 70px;
-  width: 70px;
+  float: left;
+  margin-right: 10px;
 }
 
 button:hover {
